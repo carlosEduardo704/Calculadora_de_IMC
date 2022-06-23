@@ -1,23 +1,18 @@
-import PySimpleGUI as psg
+import PySimpleGUI as Psg
 
 layout = [
-    [psg.Text(), psg.InputText()],
-    [psg.Text(), psg.InputText()],
-    [psg.Text(), psg.InputText()],
-    [psg.Button()]
+    [Psg.Push(), Psg.Text('Calculadora de IMC!', font='Arial, 25'), Psg.Push()],
+    [Psg.Text('Qual seu peso?', font='Arial, 15'), Psg.InputText(key='userpeso')],
+    [Psg.Text('Qual sua altura?', font='Arial, 15'), Psg.InputText(key='useraltura')],
+    [Psg.Text('Resultado!', font='Arial, 15'), Psg.Push(), Psg.Text(f'{imc_zerado}')],
+    [Psg.Push(), Psg.Button('CALCULAR'), Psg.Push()]
 ]
 
-layout_calcular = [
-    [psg.Text(), psg.InputText()],
-    [psg.Text(), psg.InputText()],
-    [psg.Text(), psg.InputText()],
-    [psg.Button()]
-]
 
-janela_em_uso = psg.Window('CALCULADORA DE IMC', layout)
+janela_em_uso = Psg.Window('CALCULADORA DE IMC', layout, size=(600, 600))
 
-while 1:
+while True:
     evento, valor = janela_em_uso.read()
-    if evento == psg.WIN_CLOSED:
+    if evento == Psg.WIN_CLOSED:
         break
 
