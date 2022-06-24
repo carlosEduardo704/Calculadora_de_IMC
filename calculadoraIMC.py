@@ -35,7 +35,7 @@ def janela_inicio():
     ]
     return Psg.Window('CALCULADORA IMC', layout, size=(600, 300), finalize=True)
 
-
+#5
 def janela_erro():
     Psg.theme('Black')
     layout = [
